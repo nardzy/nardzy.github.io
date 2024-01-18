@@ -1,4 +1,12 @@
 window.onload = function() {
+
+    let specialImgLoaded = false;
+    let specialImage = new Image();
+    specialImage.src = "special.png";
+    specialImage.onload = () => {
+        specialImgLoaded = true;
+    };
+    
     let elem = {};
     let divs = document.getElementsByTagName("div");
     for (let i = 0; i < divs.length; i++) {
@@ -6,8 +14,6 @@ window.onload = function() {
 
         elem[div.id] = document.querySelector("#" + div.id);
     }
-
-    elem.loading.style.opacity = 0;
 
     let canvas = document.querySelector("#canvas");
     let ctx = canvas.getContext("2d");
@@ -178,13 +184,20 @@ window.onload = function() {
             ctx.save();
             ctx.translate(obj.x, obj.y);
             ctx.rotate(obj.rotate);
-            ctx.lineWidth = obj.radius / 2;
-            ctx.fillStyle = "rgb(120, 120, 120)";
-            ctx.strokeStyle = "rgb(55, 55, 55)";
-            shape(obj.radius, obj.shape, true, 0.1);
-            ctx.stroke();
-            ctx.fill();
-            ctx.restore();
+            if (obj.special) {
+                if (specialImgLoaded) {
+                    ctx.scale(0.2, 0.2);
+                    ctx.drawImage(specialImage, 0, 0);
+                }
+            } else {
+                ctx.lineWidth = obj.radius / 2;
+                ctx.fillStyle = "rgb(120, 120, 120)";
+                ctx.strokeStyle = "rgb(55, 55, 55)";
+                shape(obj.radius, obj.shape, true, 0.1);
+                ctx.stroke();
+                ctx.fill();
+                ctx.restore();
+            }
         }
 
         window.requestAnimationFrame(visual);
@@ -194,5 +207,6 @@ window.onload = function() {
     visual();
 
     window.onresize = resize;
+    elem.loading.style.opacity = 0;
 
 }
