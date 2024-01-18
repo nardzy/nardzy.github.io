@@ -186,7 +186,7 @@ window.onload = function() {
             ctx.rotate(obj.rotate);
             if (obj.special) {
                 if (specialImgLoaded) {
-                    ctx.scale(0.2, 0.2);
+                    ctx.scale(0.1, 0.1);
                     ctx.drawImage(specialImage, 0, 0);
                 }
             } else {
@@ -196,8 +196,8 @@ window.onload = function() {
                 shape(obj.radius, obj.shape, true, 0.1);
                 ctx.stroke();
                 ctx.fill();
-                ctx.restore();
             }
+            ctx.restore();
         }
 
         window.requestAnimationFrame(visual);
