@@ -1,5 +1,9 @@
 window.onload = function() {
 
+    window.oncontextmenu = function() {
+        return false;
+    };
+
     let elem = {};
     let divs = document.getElementsByTagName("div");
     for (let i = 0; i < divs.length; i++) {
@@ -11,10 +15,6 @@ window.onload = function() {
 
     let canvas = document.querySelector("#canvas");
     let ctx = canvas.getContext("2d");
-
-    canvas.oncontextmenu = function() {
-        return false;
-    };
 
     let screen = new class {
         constructor() {
@@ -113,7 +113,7 @@ window.onload = function() {
             return `rgb(${this.red}, ${this.green}, ${this.blue})`;
         }
         update() {
-            
+
             this.rate++;
             if (this.rate >= this.rateMax) {
                 this.rate = 0;
@@ -195,4 +195,4 @@ window.onload = function() {
     window.onresize = resize;
     elem.loading.style.opacity = 0;
 
-}
+};
