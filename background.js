@@ -2,7 +2,7 @@ window.onload = function() {
 
     let specialImgLoaded = false;
     let specialImage = new Image();
-    specialImage.src = "special.png";
+    specialImage.src = "clipped.png";
     specialImage.onload = () => {
         specialImgLoaded = true;
     };
