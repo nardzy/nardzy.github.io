@@ -1,5 +1,4 @@
 window.onload = function() {
-    let testChange = aaaaaaaaaaa222dfffff923012830812903123;
     let elem = {};
     let divs = document.getElementsByTagName("div");
     for (let i = 0; i < divs.length; i++) {
