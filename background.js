@@ -3,6 +3,7 @@ window.onload = function() {
     let divs = document.getElementsByTagName("div");
     for (let i = 0; i < divs.length; i++) {
         let div = divs[i];
+        if (div.id == "") continue;
 
         elem[div.id] = document.querySelector("#" + div.id);
     }
