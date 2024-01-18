@@ -97,7 +97,7 @@ window.onload = function() {
            this.ranMov = random.float(-0.1, 0.1);
            this.x = screen.w + this.radius * 2;
            this.y = Math.random() * screen.h;
-           this.special = random.int(0, 20) == 0 ? true : false;
+           this.special = random.int(0, 10) == 0 ? true : false;
         }
     }
 
@@ -186,7 +186,6 @@ window.onload = function() {
             ctx.rotate(obj.rotate);
             if (obj.special) {
                 if (specialImgLoaded) {
-                    ctx.scale(0.1, 0.1);
                     ctx.drawImage(specialImage, 0, 0);
                 }
             } else {
