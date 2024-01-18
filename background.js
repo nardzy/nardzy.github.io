@@ -154,9 +154,9 @@ window.onload = function() {
 
     const visual = () => {
 
-        ctx.globalAlpha = 1;
         ground.update();
 
+        ctx.globalAlpha = 1;
         ctx.fillStyle = ground.rgb;
         ctx.fillRect(0, 0, screen.w, screen.h);
 
