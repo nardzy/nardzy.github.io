@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <title>総当たりの裏技</title>
+</head>
+<body>
+    <canvas id = "canvas"></canvas>
+    <br>
+    <button id = "remake" type = "button">作成</button>
+    <button id = "correct" type = "button">正解</button>
+    <br>
+    <br>チャンク毎に隠す数<br>
+    最小
+    <input type = "number" id = "hideMin" min = "0" max = "9" placeholder = "2" value = "2">
+    <br>
+    最大
+    <input type = "number" id = "hideMax" min = "0" max = "9" placeholder = "5" value = "5">
+    <br>
+    <br>
+    <div id = "hideCount">0 Hided</div>
+    <script src = "create.js"></script>
+</body>
+</html>
