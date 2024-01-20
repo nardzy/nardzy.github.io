@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg描画用</title>
+</head>
+<body>
+    <canvas id = "canvas" width = "600" height = "600"></canvas>
+    <br>
+    <input placeholder = "ここにsvgデータを入力" type = "text" id = "svgdata">svgでーた(path2D)<br>
+    <input placeholder = "すうじ" type = "text" id = "svgsize" value = "1">さいず(scale)<br>
+    <input placeholder = "すうじ" type = "text" id = "strokesize" value = "1">さいず(lineWidth)<br>
+    <input placeholder = "hex" type = "text" id = "fillcolor" value = "#fff">塗り(fillStyle)<br>
+    <input placeholder = "hex" type = "text" id = "strokecolor" value = "#999">塗り(strokeStyle)<br>
+    <input type = "button" id = "svgadd" value = "追加">
+    <input type = "button" id = "svgrem" value = "削除">
+    <script src = "render.js"></script>
+</body>
+</html>
