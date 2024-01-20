@@ -49,7 +49,6 @@ document.querySelector("#strokecolor").onchange = function() {
 document.querySelector("#svgadd").onclick = function() {
     paths.push({
         path: svgData,
-        size: svgSize,
         fillColor: fillColor,
         strokeColor: strokeColor
     });
@@ -69,7 +68,7 @@ const render = () => {
         ctx.strokeStyle = svg.strokeColor;
         ctx.save();
         ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.scale(svg.size, svg.size);
+        ctx.scale(svgSize, svgSize);
         ctx.fill(svg.path);
         ctx.stroke(svg.path);
         ctx.restore();
