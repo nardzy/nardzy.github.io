@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ddd;
+    background-color: #222;
+}
+
+.ctr {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+}
+
+.hdr {
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #272727;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ctt {
+    text-align: center;
+    width: 90px;
+    height: 45px;
+    transform: rotate(1440deg);
+    transition: 1s;
+}
+
+.hdr:hover {
+    filter: brightness(110%);
+}
+
+.floaty {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    white-space: nowrap;
+    border-radius: 5px;
+    background-color: rgba(77, 77, 77, 0.3);
+    padding: 10px;
+    transition: 2s ease-in-out;
+}
