@@ -44,4 +44,9 @@ body {
     background-color: rgba(77, 77, 77, 0.3);
     padding: 10px;
     transition: 2s ease-in-out;
+    cursor: pointer;
+}
+
+.floaty:hover {
+    background-color: #999;
 }

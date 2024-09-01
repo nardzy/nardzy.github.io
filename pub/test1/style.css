@@ -34,8 +34,14 @@ body {
     transform: scale(90%);
 }
 
-.maaa {
-    transform: scale(80%);
+.canvy {
+    object-fit: contain;
     width: 960px;
     height: 540px;
+}
+
+.teixt {
+    position: absolute;
+    width: 5em;
+    right: inherit;
 }

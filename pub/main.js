@@ -1,5 +1,50 @@
 const initalized = (() => {
 
+    const lang = (() => {
+
+        const language = window.navigator.language.split("-")[0];
+
+        const lang_map = new Map([
+            ["ja", {
+                title: "モノ置き場",
+                priv: {
+                    loop: "ループ再生",
+                    loop_canvas: "ループ再生 (Canvas2d)"
+                },
+                change: state => {
+                    if (state) {
+                        return "(裏)";
+                    }
+                    return "置き場";
+                }
+            }],
+            ["en", {
+                title: "The Place",
+                priv: {
+                    loop: "Video Loop",
+                    loop_canvas: "Video Loop (Canvas2d)"
+                },
+                change: state => {
+                    if (state) {
+                        return "Devs";
+                    }
+                    return "Main";
+                }
+            }]
+        ]);
+
+        if (lang_map.has(language)) {
+
+            return lang_map.get(language);
+
+        }
+
+        return lang_map.get("en");
+
+    })();
+
+    document.title = lang.title;
+
     const main = document.querySelector("#main_contents");
     const priv = document.querySelector("#priv_contents");
 
@@ -79,9 +124,22 @@ const initalized = (() => {
 
             const content = create(false, 30, -Math.PI * 0.75);
 
-            content[0].innerText = "ファイルのテスト";
+            content[0].innerText = lang.priv.loop;
             content[0].addEventListener("click", () => {
                 window.open("/pub/test0/test.html");
+            });
+
+            list.push(content);
+
+        }
+
+        {
+
+            const content = create(false, 40, -Math.PI * 0.5);
+
+            content[0].innerText = lang.priv.loop_canvas;
+            content[0].addEventListener("click", () => {
+                window.open("/pub/test1/test.html");
             });
 
             list.push(content);
@@ -92,7 +150,6 @@ const initalized = (() => {
 
     })();
 
-
     {
 
         let state = false;
@@ -100,6 +157,8 @@ const initalized = (() => {
     
         const changer = document.querySelector("#changer");
         const changer_text = document.querySelector("#changer_text");
+
+        changer_text.innerText = lang.change(false);
 
         changer.addEventListener("click", () => {
 
@@ -126,7 +185,7 @@ const initalized = (() => {
 
             clearTimeout(changeout);
             changeout = setTimeout(() => {
-                changer_text.innerText = state ? "(裏)" : "置き場";
+                changer_text.innerText = lang.change(state);
                 changer_text.style.opacity = 1;
             }, 500);
     
@@ -144,5 +203,9 @@ const initalized = (() => {
 if (initalized) {
 
     console.info("hi");
+
+} else {
+
+    console.info("hmm");
 
 }
